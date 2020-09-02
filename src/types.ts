@@ -1,7 +1,11 @@
 type SeriesSize = 'sm' | 'md' | 'lg';
 
 export interface SimpleOptions {
-  text: string;
+  apiHost:string;
+  apiPath:string;
+
+  tableHeaders:string ;
+
   showSeriesCount: boolean;
   seriesCountSize: SeriesSize;
 }

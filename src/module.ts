@@ -5,10 +5,16 @@ import { TablePanel } from './TablePanel';
 export const plugin = new PanelPlugin<SimpleOptions>(TablePanel).setPanelOptions(builder => {
   return builder
     .addTextInput({
-      path: 'text',
-      name: 'Simple text option',
-      description: 'Description of panel option',
-      defaultValue: 'Default value of text input option',
+      path: 'apiHost',
+      name: 'Host Name',
+      description: 'Please mention host name like eg : https://infraportal-hub.copart.com/',
+      defaultValue: 'https://infraportal-hub.copart.com/',
+    })
+    .addTextInput({
+      path: 'apiPath',
+      name: 'API Path For Get Alerts',
+      description: 'Please mention api path  like eg : api/v1/noc/alert_id/',
+      defaultValue: 'api/v1/noc/alert_id/?format=json',
     })
     .addBooleanSwitch({
       path: 'showSeriesCount',
