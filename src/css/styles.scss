@@ -1,0 +1,88 @@
+@mixin tableStyling{
+    // border: 1px solid #ddd;
+    padding: 10px;
+    background: #fff;
+}
+
+@mixin badgeStyling{
+  padding: 4px;
+  color: #fff;
+  font-size: 0.9rem;
+  // font-weight: 500;
+  line-height: 14px;
+  vertical-align: baseline;
+  white-space: nowrap;
+  // text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+  border-radius: .25rem;
+}
+@mixin actionsBtnStyling{
+  color: #5d5c5c;
+  padding: 10px;
+  font-size: 0.9rem;
+}
+
+.custom-badge{
+  @include badgeStyling;
+}
+
+.active{
+    background-color: #626ed4;
+}
+.inactive{
+  background-color: #f8b425;
+}
+.pending{
+  background-color: #02a499;
+}
+
+
+#dataRecords{
+        border-collapse: collapse;
+        width: 100%;
+        // display: none;
+
+        td {
+            @include tableStyling;
+            color: #000!important;
+            border-top: 1px solid #efefef;
+        }
+        th{
+            @include tableStyling;
+            color: #fff;
+        }
+      
+    //    tr:nth-child(even){background-color: #f2f2f2;}
+      
+       tr:hover {background-color: #ddd;}
+        tr th:nth-child(1), tr td:nth-child(1){
+          text-align: center!important;
+        }
+       th {
+        padding-top: 8px;
+        padding-bottom: 8px;
+        text-align: left;
+        background-color: #4CAF50;
+        color: #fff;
+        // color: #495057;
+        // background-color: #f8f9fa;
+      }
+}
+  .action-icons{
+        &.edit{
+            a{
+              @include actionsBtnStyling;
+                :hover{
+                    color: green;
+                }
+            }
+
+        }
+        &.delete{
+            a{
+              @include actionsBtnStyling;
+                :hover{
+                    color: red;
+                }
+            }
+        }
+}
