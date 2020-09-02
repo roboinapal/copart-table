@@ -14,7 +14,7 @@ export const plugin = new PanelPlugin<SimpleOptions>(TablePanel).setPanelOptions
       path: 'apiPath',
       name: 'API Path For Get Alerts',
       description: 'Please mention api path  like eg : api/v1/noc/alert_id/',
-      defaultValue: 'api/v1/noc/alert_id/?format=json',
+      defaultValue: 'api/v1/noc/alert_id/',
     })
     .addBooleanSwitch({
       path: 'showSeriesCount',
