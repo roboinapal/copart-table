@@ -3,6 +3,7 @@ import { PanelProps } from '@grafana/data';
 import { SimpleOptions } from 'types';
 import {  useTheme } from '@grafana/ui';
 import TableComponent from 'components/table.component';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 interface Props extends PanelProps<SimpleOptions> {}
 
