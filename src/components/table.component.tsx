@@ -4,6 +4,7 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { faTrash, faEdit } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { SimpleOptions } from 'types';
+import Table from 'react-bootstrap/Table'
 
 
 library.add(faTrash, faEdit)
@@ -53,6 +54,9 @@ export class TableComponent extends Component {
         const id = ev.currentTarget.dataset.id;
         alert('Delete Row' + id)
     }
+    addData(){
+        console.log('Form Data')
+    }
 
     getBadge(status: number) {
         if (status == 1) {
@@ -81,9 +85,12 @@ export class TableComponent extends Component {
 
         return (
             <div>
-                <table id="dataRecords">
+                <button type="button" className="btn btn-primary add-item">Add Item</button>
+
+
+                <Table id="dataRecords" responsive>
                     <thead>
-                        <tr >
+                        <tr className="sticky-header">
                             <th>Id</th>
                             <th>Name</th>
                             <th>Alert Id</th>
@@ -119,8 +126,24 @@ export class TableComponent extends Component {
                         }
                     </tbody>
 
-                </table>
+                </Table>
 
+
+
+                    
+                        {/* modalpopcontent */}
+                        <form id="data" action="" method="post" className="Form">
+                            <input placeholder="Alert ID" id="name" type="text" required className="input" />
+                            <input placeholder="Alert Name" id="name" type="text" required className="input" />
+                            <input placeholder="Alert URL" id="name" type="text" required className="input" />
+                            <select id="status" name="status">
+                                <option value="1">Critical</option>
+                                <option value="2">Warning</option>
+                                <option value="3">Ok</option>
+                                <option value="4">Unkown</option>
+                            </select>
+                            <button name="submit" type="submit"  onClick={this.addData}>Send</button>
+                        </form>
 
             </div>
         );
